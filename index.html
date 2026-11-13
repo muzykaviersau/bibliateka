@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="be">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Музыка Вершаў | Бібліятэка</title>
+
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+
+        background:
+          radial-gradient(
+            ellipse at top left,
+            rgba(70, 90, 120, 0.12),
+            transparent 60%
+          ),
+          #0a0a0a;
+
+        color: #f0f0f0;
+        font-family: Georgia, serif;
+      }
+      .project-brand {
+        position: fixed;
+        top: 40px;
+        right: 40px;
+        opacity: 0.8;
+      }
+
+      .project-brand:hover .mv-logo {
+        opacity: 0.3;
+      }
+
+      .mv-logo {
+        height: 100px;
+        transition: opacity 0.3s ease;
+      }
+      .ig-link,
+      .fb-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 40px;
+      }
+
+      .social-icons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        position: absolute;
+
+        left: 85%;
+        top: 35%;
+
+        transform: translateY(-150%);
+
+        opacity: 1;
+        visibility: hidden;
+
+        transition:
+          opacity 0.35s ease,
+          transform 0.35s ease;
+      }
+      .project-brand.social-open .social-icons {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(-50%);
+      }
+      .social-icons img {
+        width: 20px;
+        height: 20px;
+        display: block;
+
+        transition: opacity 0.3s ease;
+      }
+      .project-brand:has(.ig-link:hover) .fb-link img,
+      .project-brand:has(.ig-link:hover) .mv-logo {
+        opacity: 0.25;
+      }
+      .project-brand:has(.fb-link:hover) .ig-link img,
+      .project-brand:has(.fb-link:hover) .mv-logo {
+        opacity: 0.25;
+      }
+
+      .library {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 80px 30px;
+      }
+
+      .title {
+        text-align: left;
+        color: rgba(217, 195, 154, 0.75);
+        font-size: 47px;
+        margin-bottom: 10px;
+      }
+      .library-type {
+        color: #9d9d9d;
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+      }
+
+      .subtitle {
+        text-align: left;
+        color: #9d9d9d;
+        margin-bottom: 80px;
+      }
+      .search-box {
+        margin-bottom: 45px;
+      }
+
+      .search-box input {
+        width: 100%;
+        max-width: 420px;
+
+        box-sizing: border-box;
+
+        background: rgba(255, 255, 255, 0.03);
+
+        border: 1px solid rgba(216, 179, 106, 0.18);
+
+        border-radius: 8px;
+
+        padding: 12px 14px;
+
+        color: #d9c39a;
+
+        font-size: 16px;
+
+        outline: none;
+
+        transition: all 0.3s ease;
+      }
+
+      .search-box input::placeholder {
+        color: #7c7c7c;
+      }
+
+      .search-box input:focus {
+        border-color: rgba(216, 179, 106, 0.45);
+
+        box-shadow: 0 0 15px rgba(216, 179, 106, 0.08);
+      }
+      .collection {
+        border-top: 1px solid rgba(216, 179, 106, 0.25);
+        padding: 40px 0;
+      }
+
+      .collection:last-child {
+        border-bottom: 1px solid rgba(216, 179, 106, 0.25);
+      }
+
+      .collection h2 {
+        color: #d8b36a;
+        font-size: 34px;
+        margin: 0;
+      }
+
+      .collection p {
+        color: #bbbbbb;
+        margin: 12px 0 20px;
+      }
+
+      .collection a {
+        color: #d8b36a;
+        text-decoration: none;
+      }
+
+      .collection a:hover {
+        opacity: 0.8;
+      }
+
+      @media (max-width: 900px) {
+        .project-brand {
+          top: 20px;
+          right: 17px;
+        }
+        .social-icons {
+          left: 75%;
+        }
+        .library {
+          padding-top: 130px;
+        }
+        .title {
+          font-size: 33px;
+        }
+        .library-type {
+          font-size: 14px;
+        }
+        .collection h2 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="project-brand">
+      <div class="social-icons">
+        <a
+          class="ig-link"
+          href="https://www.instagram.com/alehlazouski/"
+          target="_blank"
+        >
+          <img src="instagram-white.png" alt="Instagram" />
+        </a>
+
+        <a
+          class="fb-link"
+          href="https://www.facebook.com/muzykaviersau"
+          target="_blank"
+        >
+          <img src="facebook-white.png" alt="Facebook" />
+        </a>
+      </div>
+
+      <img src="avatar MV-белы.png" alt="Музыка Вершаў" class="mv-logo" />
+    </div>
+
+    <div class="library">
+      <div class="title">БІБЛІЯТЭКА</div>
+      <div class="library-type">музычных зборнікаў</div>
+      <div class="subtitle">ЗЬМЕСТ:</div>
+      <div class="search-box">
+        <input type="text" placeholder="Зборнік або аўтар..." />
+      </div>
+      <div class="collection">
+        <h2>ДЗЯДЫ</h2>
+
+        <p>Музычны зборнік паводле паэтычнай спадчыны.</p>
+
+        <a href="#"> → Адкрыць зборнік </a>
+      </div>
+
+      <div class="collection">
+        <h2>ЯКУБ КОЛАС 1909–1917</h2>
+
+        <p>Музычны цыкл паводле вершаў 1909–1917 гадоў.</p>
+
+        <a href="#"> → Адкрыць зборнік </a>
+      </div>
+    </div>
+    <script>
+      const brand = document.querySelector(".project-brand");
+
+      let hideTimer;
+
+      function showSocials() {
+        clearTimeout(hideTimer);
+        brand.classList.add("social-open");
+      }
+
+      function hideSocials() {
+        hideTimer = setTimeout(() => {
+          brand.classList.remove("social-open");
+        }, 3000);
+      }
+
+      brand.addEventListener("mouseenter", showSocials);
+      brand.addEventListener("mouseleave", hideSocials);
+    </script>
+  </body>
+</html>
