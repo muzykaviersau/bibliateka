@@ -8,20 +8,21 @@
 
     <style>
       body {
-        margin: 0;
-        min-height: 100vh;
+        overflow-x: hidden;
 
         background:
           radial-gradient(
             ellipse at top left,
-            rgba(70, 90, 120, 0.12),
+            rgba(70, 90, 120, 0.18),
             transparent 60%
           ),
-          #0a0a0a;
+          linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)),
+          url("bibliateka-bg.webp");
 
-        color: #f0f0f0;
-        font-family: Georgia, serif;
+        background-size: cover;
+        background-position: center;
       }
+
       .project-brand {
         position: fixed;
         top: 40px;
