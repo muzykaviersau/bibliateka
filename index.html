@@ -233,22 +233,36 @@
       <div class="library-type">музычных зборнікаў</div>
       <div class="subtitle">ЗЬМЕСТ:</div>
       <div class="search-box">
-        <input type="text" placeholder="Зборнік або аўтар..." />
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Зборнік або аўтар..."
+        />
       </div>
-      <div class="collection">
+      <div
+        class="collection"
+        data-search="на дзяды адам міцкевіч ой скажы мне вецер вольны сохну марна я ў астрозе якуб колас на ледзяной гітары тодар кляшторны гаданне зязюля алаіза пашкевіч цётка не прашу ларыса геніюш быў ёсць буду уладзімер караткевіч"
+      >
         <h2>ДЗЯДЫ</h2>
 
         <p>Музычны зборнік паводле паэтычнай спадчыны.</p>
 
-        <a href="#"> → Адкрыць зборнік </a>
+        <a href="https://muzykaviersau.github.io/dziady-26/">
+          → Адкрыць зборнік
+        </a>
       </div>
 
-      <div class="collection">
+      <div
+        class="collection"
+        data-search="якуб колас колас 1909 1917 апошні лісток сохну марна вецер вольны будзь цьвёрды"
+      >
         <h2>ЯКУБ КОЛАС 1909–1917</h2>
 
         <p>Музычны цыкл паводле вершаў 1909–1917 гадоў.</p>
 
-        <a href="#"> → Адкрыць зборнік </a>
+        <a href="https://muzykaviersau.github.io/kolas-1909-1917/">
+          → Адкрыць зборнік
+        </a>
       </div>
     </div>
     <script>
@@ -269,6 +283,24 @@
 
       brand.addEventListener("mouseenter", showSocials);
       brand.addEventListener("mouseleave", hideSocials);
+
+      const searchInput = document.getElementById("searchInput");
+
+      const collections = document.querySelectorAll(".collection");
+
+      searchInput.addEventListener("input", () => {
+        const value = searchInput.value.toLowerCase().trim();
+
+        collections.forEach((collection) => {
+          const text = collection.dataset.search;
+
+          if (value === "" || text.includes(value)) {
+            collection.style.display = "";
+          } else {
+            collection.style.display = "none";
+          }
+        });
+      });
     </script>
   </body>
 </html>
