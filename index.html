@@ -221,7 +221,7 @@
 
       @media (max-width: 900px) {
         .project-brand {
-          position: fixed;
+          position: absolute;
           top: 20px;
           right: 29px;
 
@@ -233,6 +233,8 @@
         }
         .social-icons {
           left: 90%;
+
+          z-index: 10000;
         }
         .library {
           width: 100%;
@@ -372,7 +374,7 @@
       brand.addEventListener("mouseenter", showSocials);
       brand.addEventListener("mouseleave", hideSocials);
 
-      const mvLink = document.querySelector(".project-brand a");
+      const mvLink = document.querySelector(".project-brand > a");
 
       if (window.innerWidth <= 900) {
         mvLink.addEventListener("click", (e) => {
