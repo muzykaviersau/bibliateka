@@ -229,6 +229,7 @@
         }
         .mv-logo {
           height: 90px;
+          pointer-events: none;
         }
         .social-icons {
           left: 90%;
@@ -253,6 +254,7 @@
           padding-left: 20px;
           padding-right: 20px;
         }
+
         .title {
           font-size: 33px;
         }
@@ -370,6 +372,13 @@
       brand.addEventListener("mouseenter", showSocials);
       brand.addEventListener("mouseleave", hideSocials);
 
+      const mvLink = document.querySelector(".project-brand a");
+
+      if (window.innerWidth <= 900) {
+        mvLink.addEventListener("click", (e) => {
+          e.preventDefault();
+        });
+      }
       const searchInput = document.getElementById("searchInput");
 
       const collections = document.querySelectorAll(".collection");
