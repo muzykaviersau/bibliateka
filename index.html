@@ -221,9 +221,11 @@
 
       @media (max-width: 900px) {
         .project-brand {
-          position: absolute;
+          position: fixed;
           top: 20px;
           right: 29px;
+
+          z-index: 9999;
         }
         .mv-logo {
           height: 90px;
@@ -232,7 +234,24 @@
           left: 90%;
         }
         .library {
+          width: 100%;
+          max-width: 100%;
+
+          transform: none;
+
+          margin-left: 0;
+          margin-right: 0;
           padding-top: 130px;
+        }
+        .library-header {
+          position: static;
+
+          background: transparent;
+
+          backdrop-filter: none;
+
+          padding-left: 20px;
+          padding-right: 20px;
         }
         .title {
           font-size: 33px;
@@ -242,6 +261,9 @@
         }
         .collection h2 {
           font-size: 26px;
+        }
+        body::before {
+          position: absolute;
         }
       }
     </style>
@@ -267,9 +289,9 @@
         </a>
       </div>
 
-      <a href="index.html" title="На галоўную старонку Бібліятэкі">
+      <!--a href="index.html" title="На галоўную старонку Бібліятэкі"-->
         <img src="avatar MV-белы.png" alt="Музыка Вершаў" class="mv-logo" />
-      </a>
+      </!--a>
     </div>
     <div class="library">
       <div class="library-header">
